@@ -7,9 +7,9 @@ os.chdir("C://Users/joshu/Documents/Uni/CSY1026/scripts/")
 runFlag = True
 
 while runFlag:
-    choice = int(input("\nWhich account would you like to log into?\n1) Normal\n2) Coursework\n>"))
+    account_choice = int(input("\nWhich account would you like to log into?\n1) Normal\n2) Coursework\n>"))
 
-    if (choice == 1 or choice == 2):
+    if (account_choice == 1 or account_choice == 2):
         runFlag = False
     else:
         print("\nIncorrect Input\n")
@@ -47,11 +47,7 @@ while runFlag:
 
     elif (command == "run"):
         os.chdir("C://Oracle12c/")
-        run_time = ""
-        
-        if (choice == 1 or choice == 2):
-            run_time = sp.Popen(f"sqlplus.exe {accounts[choice-1]}@student/password", stdout=sp.PIPE, stdin=sp.PIPE, stderr=sp.PIPE)
-
+        run_time = sp.Popen(f"sqlplus.exe {accounts[account_choice-1]}@student/password", stdout=sp.PIPE, stdin=sp.PIPE, stderr=sp.PIPE)
         print("\n"+run_time.communicate(f"@C://Users/joshu/Documents/Uni/CSY1026/scripts/{current_file}.sql\n".encode())[0].decode())
         input("Press Enter to continue...\n")
     else:
