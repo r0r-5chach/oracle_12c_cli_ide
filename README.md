@@ -1,4 +1,4 @@
-# CSY1026_cli_ide
+# oracle_12c_cli_ide
 
 This code was to made to make accessing my university CSY1026 module database server easier and also allowed the running of scripts.
 Editing was also made possible by opening the files in vscode.
